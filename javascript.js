@@ -16,3 +16,18 @@ const operate = ((operator, a, b) => {
         default: return null;
     }
 });
+
+const display = document.querySelector(".display");
+const nums = document.querySelectorAll("#num");
+
+let currentNum = "";
+const addNum = ((num) => {
+    currentNum += num;
+    display.textContent = currentNum;
+});
+
+nums.forEach(button => {
+    button.addEventListener("click", () => {
+        addNum(button.textContent);
+    });
+});
